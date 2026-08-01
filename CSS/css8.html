@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Overflow</title>
+        <style>
+            body{
+                background-color: rgb(255, 153, 28);
+                padding: 10px;
+            }
+
+            .box{
+                width: 300px;
+                height: 200px;
+
+                border: 2px solid black;
+                padding: 15px;
+                background-color: aqua;
+
+                display: inline-block;
+                vertical-align: top;
+                margin: 30px;
+            }
+
+            .overflow-visible{
+                overflow: visible;
+            }
+
+            .overflow-hidden{
+                overflow: hidden;
+            }
+
+            .overflow-scroll{
+                overflow: scroll;
+            }
+
+            .overflow-auto{
+                overflow: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Testing CSS Overflow Behaviors</h2>
+        <p>Compare how each box handles text that exceeds its fixed 300px by 200px dimensions.</p>
+
+        <div class="box overflow-visible">
+            <h3>1. overflow: visible</h3>
+            <p>Step 1: This is a very long paragraph used to test overflow values. As you can see, because the setting is set to visible, all the extra sentences will completely break out of the container boundaries and display down below it awkwardly.This is a very long paragraph used to test overflow values. As you can see, because the setting is set to visible, all the extra sentences will completely break out of the container boundaries and display down below it awkwardly</p>
+        </div>
+
+        <div class="box overflow-hidden">
+            <h3>2. overflow: hidden</h3>
+            <p>Step 2: This is a very long paragraph used to test overflow values. As you can see, because the setting is set to hidden, any extra sentences that push past the bottom margin are cleanly sliced away and disappear from the web view entirely.This is a very long paragraph used to test overflow values. As you can see, because the setting is set to hidden, any extra sentences that push past the bottom margin are cleanly sliced away and disappear from the web view entirely.</p>
+        </div>
+
+        <div class="box overflow-scroll">
+            <h3>3. overflow: scroll</h3>
+            <p>Step 3: This is a very long paragraph used to test overflow values. As you can see, because the setting is set to scroll, scrollbars are forced onto the container box immediately, letting you slide up and down to check out the remainder of the words.This is a very long paragraph used to test overflow values. As you can see, because the setting is set to scroll, scrollbars are forced onto the container box immediately, letting you slide up and down to check out the remainder of the words.</p>
+        </div>
+
+        <div class="box overflow-auto">
+            <h3>4. overflow: auto</h3>
+            <p>Step 4: This is a very long paragraph used to test overflow values. As you can see, because the setting is set to auto, the browser is smart enough to generate a clean, responsive scrollbar only because the text layout is too long to fit naturally.This is a very long paragraph used to test overflow values. As you can see, because the setting is set to auto, the browser is smart enough to generate a clean, responsive scrollbar only because the text layout is too long to fit naturally</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>News Portal Layout</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+                background-color: #f4f4f4;
+            }
+
+            .portal-container {
+                width: 100%;
+                background-color: #ffffff;
+                border: 1px solid #000000;
+                padding: 10px;
+            }
+            
+            .column {
+                display: inline-block;     
+                vertical-align: top;      
+                
+                padding: 15px;
+                border: 1px solid #dddddd;
+            }
+            
+            .sidebar {
+                width: 20%;              
+                background-color: #e9ecef; 
+            }
+
+            .main-content {
+                width: 60%;                
+                background-color: #ffffff; 
+            }
+
+            .advertisement {
+                width: 20%;               
+                background-color: #fff3cd; 
+            }
+            
+        </style>
+    </head>
+    <body>
+
+        <h2>Global News Network</h2>
+        <p>Welcome to your morning report layout dashboard.</p>
+
+        <div class="portal-container">
+            
+            <div class="column sidebar">
+                <h3>Categories</h3>
+                <p>1. World News</p>
+                <p>2. Technology</p>
+                <p>3. Finance</p>
+                <p>4. Sports</p>
+            </div><div class="column main-content">
+                <h3>Breaking News: Web Development Beats Expectations</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum interdum felis eu condimentum. Donec laoreet eros non lectus egestas porta. Aliquam vestibulum feugiat eros, quis finibus nulla sodales vitae.</p>
+                <p>Phasellus efficitur volutpat libero nec dignissim. Proin ac interdum ex, ac mollis velit. Integer et leo arcu. Quisque finibus lacus ac massa rhoncus sodales.</p>
+            </div><div class="column advertisement">
+                <h3>Sponsored</h3>
+                <p>Looking to upgrade your technical setup? Click here to learn about our high performance coding laptops!</p>
+            </div>
+
+        </div>  
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab Task 03</title>
+    </head>
+    <body id="body" style="background-color: rgb(87, 71, 71); color: black;">
+        
+        <header id="header" style="border-bottom: 1px solid black; padding: 10px;">
+            <h3>My Header</h3>
+        </header>
+        
+        <main id="content" style="padding: 20px;">
+            <p>This is the portfolio content</p>
+            <button id="toggleBtn" onclick="toggleTheme()">Switch to Dark Mode</button>
+        </main>
+        
+        <footer id="footer" style="border-top: 1px solid black; padding: 10px; margin-top: 20px;">
+            <p>My Footer</p>
+        </footer>
+
+        <script>
+            let isDarkMode = false;
+
+            function toggleTheme() {
+                let body = document.getElementById("body");
+                let header = document.getElementById("header");
+                let footer = document.getElementById("footer");
+                let btn = document.getElementById("toggleBtn");
+
+                if (!isDarkMode) 
+                {
+                    body.style.backgroundColor = "#222";
+                    body.style.color = "#fff";
+                    header.style.borderColor = "#fff";
+                    footer.style.borderColor = "#fff";
+                    btn.innerText = "Switch to Light Mode";
+                    isDarkMode = true;
+                }else 
+                {
+                    body.style.backgroundColor = "#fff";
+                    body.style.color = "#black";
+                    header.style.borderColor = "#black";
+                    footer.style.borderColor = "#black";
+                    btn.innerText = "Switch to Dark Mode";
+                    isDarkMode = false;
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab Task 08</title>
+    </head>
+    <body>
+        <h2>Smart Registration Form</h2>
+        
+        <label>Choose User Type: </label>
+        <select id="userType" onchange="toggleFields()">
+            <option value="">--Select--</option>
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+        </select>
+        <br><br>
+
+        <div id="rollContainer" style="display: none;">
+            <label>Roll Number: </label>
+            <input type="text" id="rollNo">
+        </div>
+
+        <div id="deptContainer" style="display: none;">
+            <label>Department: </label>
+            <input type="text" id="deptName">
+        </div>
+
+        <script>
+            function toggleFields() {
+                let userType = document.getElementById("userType").value;
+                let rollBox = document.getElementById("rollContainer");
+                let deptBox = document.getElementById("deptContainer");
+
+                if(userType === "student") 
+                {
+                    rollBox.style.display = "block";
+                    deptBox.style.display = "none";
+                }else if(userType === "teacher") 
+                {
+                    deptBox.style.display = "block";
+                    rollBox.style.display = "none";
+                }else 
+                {
+                    rollBox.style.display = "none";
+                    deptBox.style.display = "none";
+                }
+            }
+        </script>
+    </body>
+</html>

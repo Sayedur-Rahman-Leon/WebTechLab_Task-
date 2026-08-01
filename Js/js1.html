@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab Task 01</title>
+    </head>
+    <body>
+        <h2>Student Portal Signup</h2>
+        <form id="signupForm">
+            <input type="text" id="fullName" placeholder="Full Name">
+            <br>
+            <input type="text" id="email" placeholder="Email">
+            <br>
+            <input type="password" id="password" placeholder="Password">
+            <br>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password">
+            <br>
+            <input type="text" id="phone" placeholder="Phone Number">
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="message" style="color: red; margin-top: 10px;"></div>
+
+        <script>
+            document.getElementById("signupForm").addEventListener("submit", function(event) {
+                event.preventDefault();
+                
+                let name = document.getElementById("fullName").value;
+                let email = document.getElementById("email").value;
+                let pass = document.getElementById("password").value;
+                let confirmPass = document.getElementById("confirmPassword").value;
+                let phone = document.getElementById("phone").value;
+                let messageDiv = document.getElementById("message");
+                
+                messageDiv.style.color = "red";
+
+                if (name === "" || email === "" || pass === "" || confirmPass === "" || phone === "") 
+                {
+                    messageDiv.innerText = "All fields are required.";
+                    return;
+                }
+                if (email.indexOf("@") === -1 || email.indexOf(".") === -1) 
+                {
+                    messageDiv.innerText = "Email must contain @ and .";
+                    return;
+                }
+                if (pass.length < 6) 
+                {
+                    messageDiv.innerText = "Password must be at least 6 characters.";
+                    return;
+                }
+                if (pass !== confirmPass) 
+                {
+                    messageDiv.innerText = "Passwords do not match.";
+                    return;
+                }
+                if (isNaN(phone)) 
+                {
+                    messageDiv.innerText = "Phone number must contain only digits.";
+                    return;
+                }
+                messageDiv.style.color = "green";
+                messageDiv.innerText = "Registration Successful!";
+            });
+        </script>
+    </body>
+</html>

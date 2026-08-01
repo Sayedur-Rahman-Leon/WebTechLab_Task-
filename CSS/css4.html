@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Product Display Section</title>
+        <style>
+            body{
+                font-family: Arial, sans-serif;
+                background-color: aqua;
+                margin: 0;
+                padding: 40px;
+                text-align: center;
+
+            }
+
+            .product-container{
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+
+            .product-box{
+                display: inline-block;
+                vertical-align: top;
+                width: 250px;
+
+                border: 1px solid black;
+                background-color: rgb(73, 119, 151);
+                padding: 10px;
+                margin: 15px;
+            }
+
+            .product-box:hover{
+                outline: 3px solid white;
+                outline-offset: 5px;
+            }
+
+            .product-box h3 {
+            margin: 10px 0;
+            font-size: 1.3em;
+            color: #333333;
+            }
+
+            .product-box .description {
+                font-size: 0.9em;
+                color: #666666;
+                height: 40px;            
+                margin-bottom: 10px;
+            }
+
+            .product-box .price {
+                font-weight: bold;
+                color: #28a745;            
+                font-size: 1.1em;
+                margin-bottom: 15px;
+            }
+
+            .product-box a {
+                display: inline-block;
+                background-color: #333333;
+                color: #ffffff;
+                text-decoration: none;
+                padding: 8px 16px;
+                border-radius: 4px;
+                font-size: 0.9em;
+            }
+
+            .product-box a:hover {
+                background-color: #555555;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Featured Products</h2>
+        <p>Check out our latest products!</p>
+
+        <div class="product-container">
+            <div class="product-box">
+                <img src="https://via.placeholder.com/120" alt="Laptop">
+                <h3>Asus Vivobook</h3>
+                <p>Powerful perfomance for work,gaming and creativity</p>
+                <p>$999.99</p>
+                <a href="#buy">Buy Now!</a>
+            </div>
+            <hr>
+            <div class="product-box">
+                <img src="https://via.placeholder.com/120" alt="Headphones">
+                <h3>Gamdias Hebe E1</h3>
+                <p>Crystal-clear audio quality with active noise cancellation</p>
+                <p>$89.99</p>
+                <a href="#buy">Buy Now!</a>
+            </div>
+            <hr>
+            <div class="product-box">
+                <img src="https://via.placeholder.com/120" alt="Smartwatch">
+                <h3>Galaxy Smartwatch</h3>
+                <p>Track your daily activities, heart rate, and notifications instantly</p>
+                <p>$199.99</p>
+                <a href="#buy">Buy Now!</a>
+            </div>
+        </div>
+    </body>
+</html>

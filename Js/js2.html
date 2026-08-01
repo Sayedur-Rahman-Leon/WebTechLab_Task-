@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab Task 02</title>
+    </head>
+    <body>
+        <h2>Travel Agency Banner</h2>
+        <img id="sliderImage" src="https://www.freepik.com/photos/travel" width="400" height="250">
+        <br>
+        <button onclick="prevImage()">Previous</button>
+        <button onclick="nextImage()">Next</button>
+
+        <script>
+            let images = [
+                "https://www.freepik.com/photos/trave"
+            ];
+            let currentIndex = 0;
+            let mainImage = document.getElementById("sliderImage");
+
+            function showImage(index) {
+                mainImage.src = images[index];
+            }
+            function nextImage() 
+            {
+                currentIndex++;
+                if (currentIndex >= images.length) {
+                    currentIndex = 0; 
+                }
+                showImage(currentIndex);
+            }
+            function prevImage() 
+            {
+                currentIndex--;
+                if (currentIndex < 0) {
+                    currentIndex = images.length - 1;
+                }
+                showImage(currentIndex);
+            }
+            setInterval(nextImage, 3000);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab Task 04</title>
+    </head>
+    <body>
+        <h2>Student Management System</h2>
+        
+        <input type="text" id="nameInput" placeholder="Name">
+        <input type="text" id="rollInput" placeholder="Roll">
+        <input type="text" id="deptInput" placeholder="Department">
+        <button onclick="addStudent()">Add Student</button>
+        <br><br>
+
+        <table border="1" id="studentTable" cellpadding="8">
+            <tr>
+                <th>Name</th>
+                <th>Roll</th>
+                <th>Department</th>
+                <th>Action</th>
+            </tr>
+        </table>
+
+        <script>
+            function addStudent() {
+                let name = document.getElementById("nameInput").value;
+                let roll = document.getElementById("rollInput").value;
+                let dept = document.getElementById("deptInput").value;
+                let table = document.getElementById("studentTable");
+
+                if (name === "" || roll === "" || dept === "") 
+                {
+                    alert("Please fill in all fields!");
+                    return;
+                }
+
+                let row = table.insertRow(-1);             
+                let cell1 = row.insertCell(0);
+                let cell2 = row.insertCell(1);
+                let cell3 = row.insertCell(2);
+                let cell4 = row.insertCell(3);
+                cell1.innerText = name;
+                cell2.innerText = roll;
+                cell3.innerText = dept;
+                let deleteBtn = document.createElement("button");
+                deleteBtn.innerText = "Delete";
+                deleteBtn.onclick = function() 
+                {
+                    row.remove();
+                };
+                cell4.appendChild(deleteBtn);
+
+                document.getElementById("nameInput").value = "";
+                document.getElementById("rollInput").value = "";
+                document.getElementById("deptInput").value = "";
+            }
+        </script>
+    </body>
+</html>

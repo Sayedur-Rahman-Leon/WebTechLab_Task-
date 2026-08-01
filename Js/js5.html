@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab Task 05</title>
+    </head>
+    <body>
+        <h2>Text Analyzer</h2>
+        <textarea id="textInput" rows="6" cols="50" placeholder="Paste your text here..."></textarea><br><br>
+        <button onclick="analyzeText()">Analyze Text</button>
+
+        <div id="resultBox" style="margin-top: 15px; padding: 10px; border: 1px solid #ccc; width: 400px; display: none;">
+            <p><bold>Total Characters:</bold> <span id="charCount">0</span></p>
+            <p><bold>Total Words:</bold> <span id="wordCount">0</span></p>
+            <p><bold>Reversed Text:</bold> <span id="reversedText"></span></p>
+        </div>
+
+        <script>
+            function analyzeText() {
+                let rawText = document.getElementById("textInput").value;
+                let cleanText = rawText.trim().replace(/\s+/g, ' ');
+
+                if (rawText.trim() === "") 
+                {
+                    alert("Please enter some text.");
+                    return;
+                }
+
+                let words = cleanText.split(" ");
+                let totalWords = words.length;
+
+                let totalChars = rawText.length;
+
+                let reversed = rawText.split("").reverse().join("");
+
+                document.getElementById("charCount").innerText = totalChars;
+                document.getElementById("wordCount").innerText = totalWords;
+                document.getElementById("reversedText").innerText = reversed;
+                document.getElementById("resultBox").style.display = "block";
+            }
+        </script>
+    </body>
+</html>

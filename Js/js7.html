@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab Task 07</title>
+    </head>
+    <body>
+        <p id="sampleText" style="padding: 10px; border: 1px solid #ccc; font-size: 16px;">
+            This is a sample paragraph that you can modify using the control panel below.
+        </p>
+
+        <button onclick="changeBg()">Change Background Color</button>
+        <button onclick="increaseFont()">Increase Font Size</button>
+        <button onclick="centerText()">Center Text</button>
+        <button onclick="resetStyle()">Reset Style</button>
+
+        <script>
+            let textBlock = document.getElementById("sampleText");
+            let currentSize = 16;
+
+            function changeBg() {
+                textBlock.style.backgroundColor = "yellow";
+            }
+            function increaseFont() {
+                currentSize += 2;
+                textBlock.style.fontSize = currentSize + "px";
+            }
+            function centerText() {
+                textBlock.style.textAlign = "center";
+            }
+            function resetStyle() {
+                currentSize = 16;
+                textBlock.style.backgroundColor = "transparent";
+                textBlock.style.fontSize = "16px";
+                textBlock.style.textAlign = "left";
+            }
+        </script>
+    </body>
+</html>

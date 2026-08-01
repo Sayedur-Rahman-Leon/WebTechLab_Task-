@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interactive Portfolio</title>
+        <style>
+            nav a { 
+                margin-right: 15px; cursor: pointer; text-decoration: underline; color: blue; 
+            }
+            .section { 
+                display: none; margin-top: 20px; 
+            }
+            .active { 
+                display: block; 
+            }
+        </style>
+    </head>
+    <body id="portfolioBody" style="background-color: white; color: black; padding: 20px;">
+
+        <header>
+            <span id="greeting" style="font-weight: bold; margin-right: 20px;"></span>
+            <button onclick="toggleTheme()">Toggle Dark/Light Mode</button>
+        </header>
+        
+        <br>
+        <nav>
+            <a onclick="showSection('about')">About</a>
+            <a onclick="showSection('projects')">Projects</a>
+            <a onclick="showSection('contact')">Contact</a>
+        </nav>
+
+        <div id="about" class="section active">
+            <h2>About Me</h2>
+            <p>Welcome to my student recruiter portfolio website!</p>
+        </div>
+
+        <div id="projects" class="section">
+            <h2>My Projects</h2>
+            <p>Project 1: Weather App<br>Project 2: E-commerce Site</p>
+        </div>
+
+        <div id="contact" class="section">
+            <h2>Contact Me</h2>
+            <form id="contactForm">
+                <input type="text" id="cName" placeholder="Name">
+                <br>
+                <input type="text" id="cEmail" placeholder="Email">
+                <br>
+                <textarea id="cMessage" placeholder="Your Message (min 10 chars)"></textarea>
+                <br>
+                <button type="submit">Send Message</button>
+            </form>
+            <div id="errDiv" style="color: red; margin-top: 10px;"></div>
+        </div>
+
+        <script>
+            let dark = false;
+            function toggleTheme() {
+                dark = !dark;
+                document.getElementById("portfolioBody").style.backgroundColor = dark ? "#333" : "#fff";
+                document.getElementById("portfolioBody").style.color = dark ? "#fff" : "#000";
+            }
+
+            let hour = new Date().getHours();
+            let greetingStr = "Good Evening";
+            if (hour < 12) greetingStr = "Good Morning";
+            else if (hour < 18) greetingStr = "Good Afternoon";
+            document.getElementById("greeting").innerText = greetingStr;
+
+            function showSection(sectionId) {
+                let sections = document.getElementsByClassName("section");
+                for(let i = 0; i < sections.length; i++) {
+                    sections[i].classList.remove("active");
+                }
+                document.getElementById(sectionId).classList.add("active");
+            }
+
+            document.getElementById("contactForm").addEventListener("submit", function(e) {
+                e.preventDefault();
+                let name = document.getElementById("cName").value;
+                let email = document.getElementById("cEmail").value;
+                let msg = document.getElementById("cMessage").value;
+                let err = document.getElementById("errDiv");
+
+                if (name === "" || email === "" || msg === "") 
+                {
+                    err.innerText = "All fields are required.";
+                    return;
+                }
+                if (email.indexOf("@") === -1 || email.indexOf(".") === -1) 
+                {
+                    err.innerText = "Invalid email format.";
+                    return;
+                }
+                if (msg.length < 10) 
+                {
+                    err.innerText = "Message must be at least 10 characters long.";
+                    return;
+                }
+
+                err.style.color = "green";
+                err.innerText = "Message Sent Successfully!";
+            });
+        </script>
+    </body>
+</html>
